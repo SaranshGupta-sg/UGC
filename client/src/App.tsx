@@ -3,6 +3,9 @@ import Home from './pages/Home';
 import SoftBackdrop from './components/SoftBackdrop';
 import Footer from './components/Footer';
 import LenisScroll from './components/lenis';
+import { Route, Routes } from 'react-router-dom';
+import Generator from './pages/Generator';
+import Result from './pages/Result';
 
 function App() {
 	return (
@@ -10,7 +13,13 @@ function App() {
 			<SoftBackdrop />
 			<LenisScroll />
 			<Navbar />
-			<Home />
+
+			<Routes>
+				<Route path='/' element={<Home />}/>
+				<Route path='/generate' element={<Generator />}/><Route path='/result/:projectId' element={<Result />}/>
+			</Routes>
+
+			
 			<Footer />
 		</>
 	);
