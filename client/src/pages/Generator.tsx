@@ -1,10 +1,11 @@
 import { useState } from "react";
 import Title from "../components/Title";
 import UploadZone from "../components/UploadZone";
+import { RectangleVerticalIcon } from "lucide-react";
 
 const Generator = () => {
   const [name, setName] = useState("");
-  const [productNmae, setProductNmae] = useState("");
+  const [productName, setProductName] = useState("");
   const [productDescription, setProductDescription] = useState("");
   const [aspectRatio, setAspectRatio] = useState("9:16");
   const [productImage, setProductImage] = useState<File | null>(null);
@@ -54,7 +55,62 @@ const Generator = () => {
 
           {/* right col */}
           <div className="w-full">
-            <p>right col</p>
+            <div className="mb-4">
+              <label htmlFor="name" className="block text-sm mb-4">
+                Project Name
+              </label>
+              <input
+                type="text"
+                id="name"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                placeholder="Name your project"
+                required
+                className="w-full bg-white/3 rounded-lg border-2 p-4 text-sm border-violet-200/10 focus:border-violet-500/50 outline-none transition-all"
+              />
+            </div>
+
+            <div className="mb-4 text-gray-300">
+              <label htmlFor="productName" className="block text-sm mb-4">
+                Product Name
+              </label>
+              <input
+                type="text"
+                id="productName"
+                value={productName}
+                onChange={(e) => setProductName(e.target.value)}
+                placeholder="Enter the name of the product"
+                required
+                className="w-full bg-white/3 rounded-lg border-2 p-4 text-sm border-violet-200/10 focus:border-violet-500/50 outline-none transition-all"
+              />
+            </div>
+
+            <div className="mb-4 text-gray-300">
+              <label
+                htmlFor="productDescription"
+                className="block text-sm mb-4"
+              >
+                Product Description{" "}
+                <span className="text-xs text-violet-400">(optional)</span>
+              </label>
+              <textarea
+                id="productDescription"
+                rows={4}
+                value={productDescription}
+                onChange={(e) => setProductDescription(e.target.value)}
+                placeholder="Enter the description of the product"
+                className="w-full bg-white/3 rounded-lg border-2 p-4 text-sm border-violet-200/10 focus:border-violet-500/50 outline-none resize-none transition-all"
+              ></textarea>
+            </div>
+
+            <div className="mb-4 text-gray-300">
+              <label className="block text-sm mb-4">Aspect Ratio</label>
+              <div className="flex gap-3">
+                <RectangleVerticalIcon onClick={()=>setAspectRatio('9:16')} className={`p-2.5 size-13 bg-white/6 rounded transition-all ring-2 ring-transparent cursor-pointer`}/>
+              </div>
+            </div>
+
+
           </div>
         </div>
       </form>
