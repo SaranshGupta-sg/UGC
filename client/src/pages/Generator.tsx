@@ -5,7 +5,6 @@ import { Loader2Icon, RectangleVerticalIcon, Wand2Icon } from "lucide-react";
 import { RectangleHorizontalIcon } from "lucide-react";
 import { PrimaryButton } from "../components/Buttons";
 
-
 const Generator = () => {
   const [name, setName] = useState("");
   const [productName, setProductName] = useState("");
@@ -111,20 +110,17 @@ const Generator = () => {
               <div className="flex gap-3">
                 <RectangleVerticalIcon
                   onClick={() => setAspectRatio("9:16")}
-                  className={`p-2.5 size-13 bg-white/6 rounded transition-all ring-2 ring-transparent cursor-pointer ${aspectRatio === '9:16' ? 'ring-violet-500/50 bg-white/10' : ''}`}
+                  className={`p-2.5 size-13 bg-white/6 rounded transition-all ring-2 ring-transparent cursor-pointer ${aspectRatio === "9:16" ? "ring-violet-500/50 bg-white/10" : ""}`}
                 />
                 <RectangleHorizontalIcon
                   onClick={() => setAspectRatio("16:9")}
-                  className={`p-2.5 size-13 bg-white/6 rounded transition-all ring-2 ring-transparent cursor-pointer ${aspectRatio === '16:9' ? 'ring-violet-500/50 bg-white/10' : ''}`}
+                  className={`p-2.5 size-13 bg-white/6 rounded transition-all ring-2 ring-transparent cursor-pointer ${aspectRatio === "16:9" ? "ring-violet-500/50 bg-white/10" : ""}`}
                 />
               </div>
             </div>
 
             <div className="mb-4 text-gray-300">
-              <label
-                htmlFor="userPrompt"
-                className="block text-sm mb-4"
-              >
+              <label htmlFor="userPrompt" className="block text-sm mb-4">
                 User Prompt{" "}
                 <span className="text-xs text-violet-400">(optional)</span>
               </label>
@@ -137,23 +133,27 @@ const Generator = () => {
                 className="w-full bg-white/3 rounded-lg border-2 p-4 text-sm border-violet-200/10 focus:border-violet-500/50 outline-none resize-none transition-all"
               ></textarea>
             </div>
-
           </div>
         </div>
 
         <div className="flex justify-center mt-10">
-          <PrimaryButton disabled={isGenerating} className="px-10 py-3 rounded-md disabled:opacity-70 disabled:cursor-not-allowed">
+          <PrimaryButton
+            disabled={isGenerating}
+            className="px-10 py-3 rounded-md disabled:opacity-70 disabled:cursor-not-allowed"
+          >
             {isGenerating ? (
               <>
-              <Loader2Icon className="size-5 animate-spin"/>Generating...
+                <Loader2Icon className="size-5 animate-spin" />
+                Generating...
               </>
-              ) : (
-                <>
-                <Wand2Icon className="size-5"/>Generate Image
-                </>)}
+            ) : (
+              <>
+                <Wand2Icon className="size-5" />
+                Generate Image
+              </>
+            )}
           </PrimaryButton>
         </div>
-
       </form>
     </div>
   );
