@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Title from "../components/Title";
 import UploadZone from "../components/UploadZone";
-import { RectangleVerticalIcon } from "lucide-react";
+import { Loader2Icon, RectangleVerticalIcon, Wand2Icon } from "lucide-react";
 import { RectangleHorizontalIcon } from "lucide-react";
 import { PrimaryButton } from "../components/Buttons";
 
@@ -142,7 +142,16 @@ const Generator = () => {
         </div>
 
         <div className="flex justify-center mt-10">
-          <PrimaryButton />
+          <PrimaryButton disabled={isGenerating} className="px-10 py-3 rounded-md disabled:opacity-70 disabled:cursor-not-allowed">
+            {isGenerating ? (
+              <>
+              <Loader2Icon className="size-5 animate-spin"/>Generating...
+              </>
+              ) : (
+                <>
+                <Wand2Icon className="size-5"/>Generate Image
+                </>)}
+          </PrimaryButton>
         </div>
 
       </form>
