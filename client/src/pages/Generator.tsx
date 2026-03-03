@@ -1,7 +1,12 @@
 import { useState } from "react";
 import Title from "../components/Title";
 import UploadZone from "../components/UploadZone";
-import { Loader2Icon, RectangleVerticalIcon, RectangleHorizontalIcon, Wand2Icon } from "lucide-react";
+import {
+  Loader2Icon,
+  RectangleVerticalIcon,
+  RectangleHorizontalIcon,
+  Wand2Icon,
+} from "lucide-react";
 import { PrimaryButton } from "../components/Buttons";
 
 const Generator = () => {
