@@ -15,8 +15,8 @@ createRoot(document.getElementById("root")! as HTMLElement).render(
   <ClerkProvider
     appearance={{
       theme: dark,
-      varibles: {
-        colorPrimary: "#4f39f6",
+      variables: {
+        colorPrimary: "#6366F1",
         colorTextOnPrimaryBackground: "#ffffff",
       },
     }}
