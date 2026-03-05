@@ -14,8 +14,8 @@ const clerkWebhooks = async (req: Request, res: Response) => {
         await prisma.user.create({
           data: {
             id: data.id,
-            email: data?.email_email_addresses[0]?.email_addresses,
-            name: data?.first_name + "" + data?.last_name,
+            email: data?.email_addresses[0]?.email_address,
+            name: data?.first_name + " " + data?.last_name,
             image: data?.image_url,
           },
         });
@@ -28,8 +28,8 @@ const clerkWebhooks = async (req: Request, res: Response) => {
             id: data.id,
           },
           data: {
-            email: data?.email_email_addresses[0]?.email_addresses,
-            name: data?.first_name + "" + data?.last_name,
+            email: data?.email_addresses[0]?.email_address,
+            name: data?.first_name + " " + data?.last_name,
             image: data?.image_url,
           },
         });
@@ -81,3 +81,5 @@ const clerkWebhooks = async (req: Request, res: Response) => {
     res.status(500).json({ message: error.message });
   }
 };
+
+export default clerkWebhooks;
